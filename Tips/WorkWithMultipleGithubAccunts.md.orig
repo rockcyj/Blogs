@@ -31,7 +31,11 @@ Add your SSH key to SSH agent:
 >```
 
 Double check if your SSH key added correctly by the following command.
+<<<<<<< HEAD
 >```
+=======
+>```bash
+>>>>>>> 2989f2f951d070d9fc8f815f8f594978ca3cb11b
 >ssh-add -l
 ># Your SSH key should be in the output list.
 >```
@@ -39,7 +43,11 @@ Double check if your SSH key added correctly by the following command.
 ## 2. Setup SSH Config
 SSH config file locates at `~/.ssh/` folder and put following content into it:
 
+<<<<<<< HEAD
 >```
+=======
+>```bash
+>>>>>>> 2989f2f951d070d9fc8f815f8f594978ca3cb11b
 ># user1 account
 >Host github.com-user1
 >    HostName github.com
@@ -50,13 +58,21 @@ SSH config file locates at `~/.ssh/` folder and put following content into it:
 ## 3. Git Clone your repo with user1.
 Since the host is set in the SSH config file above, `git clone` command is a little different with the default one. From the repo, the SSH url should be like:
 
+<<<<<<< HEAD
 >```
+=======
+>```bash
+>>>>>>> 2989f2f951d070d9fc8f815f8f594978ca3cb11b
 >git@github.com:user1/repo_name.git
 >```
 
 Here, we need to update it as:
 
+<<<<<<< HEAD
 >```
+=======
+>```bash
+>>>>>>> 2989f2f951d070d9fc8f815f8f594978ca3cb11b
 >git@github.com-user1:user1/repo_name.git
 >```
 
@@ -69,7 +85,11 @@ So the full command is:
 ## 4. Setup GIT config
 ### 4.1 Global setting change
 First, update `~/.gitconfig` by replace the `[user]` section to the following (comments not included):
+<<<<<<< HEAD
 >```
+=======
+>```bash
+>>>>>>> 2989f2f951d070d9fc8f815f8f594978ca3cb11b
 >[includeIf "gitdir:~/code/<user1_working_folder>/"] # The folder doesn't need to be user1's local git repo and it can be the parent folder of the repos you want to access with user1.
 >	path = .gitconfig-user1
 ># you might want to add another user config here later.
@@ -77,8 +97,13 @@ First, update `~/.gitconfig` by replace the `[user]` section to the following (c
 Second, add `~/.gitconfig-user1` file with following information:
 >```
 >[user]
+<<<<<<< HEAD
 >   email = <user1_github_email>
 >   name = <user1's name>
+=======
+>	email = <user1_github_email>
+> 	name = <user1's name>
+>>>>>>> 2989f2f951d070d9fc8f815f8f594978ca3cb11b
 >```
 
 ### 4.2 Local setting change
@@ -96,7 +121,11 @@ Check the section `[remote "origin"]` and modify the `url` field to:
 
 ### 4.3 Verify your GIT config
 Goto a local repo of user1 (it should be under the folder specified in `~/.gitconfig`), run the following commands:
+<<<<<<< HEAD
 >```
+=======
+>```bash
+>>>>>>> 2989f2f951d070d9fc8f815f8f594978ca3cb11b
 >$ git config --get user.email    	# should return user1's email.
 >$ git config --get user.name     	# should return user1's name.
 >```
@@ -107,7 +136,11 @@ Repeat the step 1 to 4 to add another GIT user account to your machine. I would 
 ## 6. Verify your setup
 After complete all steps above, try to make a simple PR to verify the user1 was setup correctly.
 For example, adding a README markdown file:
+<<<<<<< HEAD
 ```
+=======
+```bash
+>>>>>>> 2989f2f951d070d9fc8f815f8f594978ca3cb11b
 $ echo "# Readme" >> README.md
 $ git init
 $ git add README.md
